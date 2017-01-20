@@ -1,0 +1,40 @@
+<p>
+  fut-interface works!
+</p>
+
+
+<nav>
+  <a [routerLink]="['/login/']">
+    Home
+  </a>
+  |
+  <a [routerLink]="['/login/account']">
+    account info
+  </a>
+  |
+  <a [routerLink]="['/login/tradepile']">
+    tradepile
+  </a>
+  |
+  <a [routerLink]="['/login/transfermarket']">
+   transfermarket
+  </a>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!--<div class = control-hub>-->
+  <!--<button (click)="getCredits()">Get Coin Balance </button>-->
+  <!--<p>Coins: {{coins}}</p>-->
+  <!--<br>-->
+  <!--<br>-->
+  <!--<button (click) = "getTradePile()">Get Trade Pile</button>-->
+<!--</div>-->
+<!--<div class = "trade-pile">-->
+  <!--<div *ngFor="let card of tradepile?.auctionInfo">-->
+    <!--<div class ="card">-->
+      <!--<img src = "https://fifa17.content.easports.com/fifa/fltOnlineAssets/CC8267B6-0817-4842-BB6A-A20F88B05418/2017/fut/items/images/players/html5/120x120/{{card.itemData.assetId}}.png">-->
+      <!--<p>{{card}}</p>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

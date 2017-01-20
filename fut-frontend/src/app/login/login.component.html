@@ -1,0 +1,11 @@
+<div *ngIf="loggedIn==false && app.loggedIn==false">
+  <form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
+    <input formControlName="email" type="email" placeholder="Your email"><br>
+    <input formControlName="password" type="password" placeholder="Your password"><br>
+    <input formControlName="code" type="text" placeholder="111111"><br>
+    <button type="submit" >Log in</button>
+  </form>
+</div>
+<div *ngIf="loggedIn || app.loggedIn" >
+  <app-fut-interface></app-fut-interface>
+</div>
