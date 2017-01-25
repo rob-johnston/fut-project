@@ -5,6 +5,7 @@ var futapi = require("fut-api");
 var apiClient = new futapi();
 var url = require('url');
 var http = require('http');
+var request = require('request');
 
 
 function twoFactorCodeCb(next){
@@ -101,10 +102,9 @@ router.get('/gettradepile', function(req, res, next) {
 
     apiClient.getTradepile(function(error, response){
         if(error){
-            console.log(error);
             res.send(error);
         } else {
-            res.send(response);
+            res.send(JSON.stringify(response));
         }
     });
 });
@@ -112,19 +112,14 @@ router.get('/gettradepile', function(req, res, next) {
 
 router.get('/playerinfo', function(req,res,next){
 
-    console.log("fetching individual player info");
     var queryData = url.parse(req.url,true).query;
     var id = queryData.id;
+    console.log("fetching individual player info " +id);
 
-    http.get('http://www.easports.com/fifa/ultimate-team/api/fut/item?id=' +id, function(err,data){
-        if(err){
-            console.log(err);
-            res.send("error");
-        } else {
-            console.log(data);
-            res.send(data);
-        }
+    request('http://www.easports.com/fifa/ultimate-team/api/fut/item?id=' +id, function(error,response,body){
+        res.send(body);
     });
+
 });
 
 

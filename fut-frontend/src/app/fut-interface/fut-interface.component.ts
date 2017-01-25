@@ -34,6 +34,7 @@ export class FutInterfaceComponent implements OnInit {
 
   getTradePile(){
     this.futService.getTradePile().subscribe(response =>{
+
       for(var i = 0 ; i < response.auctionInfo.length; i++){
           var id = response.auctionInfo[i].assetId;
           this.futService.gatherExtraInfoForPlayer(id).subscribe(response2 => {
