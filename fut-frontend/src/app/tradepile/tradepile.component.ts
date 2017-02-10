@@ -17,7 +17,7 @@ export class TradepileComponent implements OnInit {
 
   constructor(tradepileService: TradepileService, private http: Http) {
     this.tradeService = tradepileService;
-    
+
   }
 
   ngOnInit() {

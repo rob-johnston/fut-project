@@ -1,0 +1,23 @@
+.rare_gold{
+  background:gold;
+}
+
+.card img {
+  height:80px;
+  width:80px;
+}
+
+.card {
+  height:180px;
+  width:160px;
+}
+
+.rating {
+  font-size: 16px;
+  position: absolute;
+
+}
+
+.position {
+  font-size:12px;
+}
